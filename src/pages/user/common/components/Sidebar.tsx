@@ -16,7 +16,7 @@ function Sidebar(props: any) {
               : 'absolute z-10 lg:z-0 lg:mt-14 inset-y-0 left-0 w-64 px-2 space-y-6 text-blue-100 transition duration-200 ease-in-out transform -translate-x-full bg-blue-800 sidebar py-7 lg:relative lg:translate-x-0'
           }
         >
-          <a href='#' className='flex items-center px-4 space-x-2 text-white'>
+          <Link to='/' className='flex items-center px-4 space-x-2 text-white'>
             <svg
               className='w-8 h-8'
               xmlns='http://www.w3.org/2000/svg'
@@ -32,7 +32,7 @@ function Sidebar(props: any) {
               />
             </svg>
             <span className='text-2xl font-extrabold'>Auth</span>
-          </a>
+          </Link>
 
           <nav>
             <Link
@@ -63,7 +63,7 @@ function Sidebar(props: any) {
               : 'absolute z-10 lg:z-0 inset-y-0 left-0 w-64 px-2 space-y-6 text-blue-100 transition duration-200 ease-in-out transform -translate-x-full bg-blue-800 sidebar py-7 lg:hidden lg:translate-x-0'
           }
         >
-          <a href='#' className='flex items-center px-4 space-x-2 text-white'>
+          <Link to='/' className='flex items-center px-4 space-x-2 text-white'>
             <svg
               className='w-8 h-8'
               xmlns='http://www.w3.org/2000/svg'
@@ -79,33 +79,33 @@ function Sidebar(props: any) {
               />
             </svg>
             <span className='text-2xl font-extrabold'>Not Auth</span>
-          </a>
+          </Link>
 
           <nav>
-            <a
-              href='#'
+            <Link
+              to='#'
               className='block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white'
             >
               Home
-            </a>
-            <a
-              href=''
+            </Link>
+            <Link
+              to='/'
               className='block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white'
             >
               About
-            </a>
-            <a
-              href=''
+            </Link>
+            <Link
+              to='/'
               className='block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white'
             >
               Features
-            </a>
-            <a
-              href=''
+            </Link>
+            <Link
+              to='/'
               className='block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white'
             >
               Pricing
-            </a>
+            </Link>
           </nav>
         </div>
       )}
