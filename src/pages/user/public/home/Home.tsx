@@ -1,32 +1,10 @@
 import React, { useContext } from 'react';
 import Navbar from '../../common/components/Navbar';
 import Sidebarv2 from '../../common/components/Sidebarv2';
-import { AuthContext } from '../../common/context/AuthContext';
 import { SidebarContext } from '../../common/context/SidebarContext';
 
 function Home() {
-  // const [openSidebar, setOpenSidebar] = useState<boolean>();
-  const user = useContext(AuthContext);
   const { close } = useContext(SidebarContext);
-
-  // console.log(user);
-
-  // const getOpen = (value: any) => {
-  //   setOpenSidebar(value);
-  // };
-
-  // useEffect(() => {
-  //   let handler = (e: any) => {
-  //     if (!ref?.current.contains(e.target)) {
-  //       close(true);
-
-  //       document.addEventListener('mousedown', handler);
-  //     }
-  //   };
-  //   return () => {
-  //     document.removeEventListener('mousedown', handler);
-  //   };
-  // }, [close]);
 
   return (
     <div className='lg:flex lg:flex-col'>
