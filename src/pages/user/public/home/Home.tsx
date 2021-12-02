@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import Navbar from '../../common/components/Navbar';
-import Sidebar from '../../common/components/Sidebar';
 import Sidebarv2 from '../../common/components/Sidebarv2';
 import { AuthContext } from '../../common/context/AuthContext';
 import { SidebarContext } from '../../common/context/SidebarContext';
