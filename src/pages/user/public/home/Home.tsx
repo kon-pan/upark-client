@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Navbar from '../../common/components/Navbar';
-import Sidebarv2 from '../../common/components/Sidebarv2';
+import Sidebar from '../../common/components/Sidebar';
 import { SidebarContext } from '../../common/context/SidebarContext';
 
 function Home() {
@@ -8,11 +8,9 @@ function Home() {
 
   return (
     <div className='lg:flex lg:flex-col'>
-      {/* <Navbar getOpen={getOpen} /> */}
       <Navbar />
       <div className='relative min-h-screen md:flex'>
-        {/* <Sidebar show={openSidebar} /> */}
-        <Sidebarv2 />
+        <Sidebar />
 
         {/* Page main content */}
         <div
