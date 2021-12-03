@@ -1,4 +1,4 @@
-import React, { FormEvent, useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import googleIcon from '../../common/img/google.svg';
@@ -22,7 +22,6 @@ function Register() {
     };
 
     console.log(`${process.env.REACT_APP_SERVER_HOSTNAME}/driver/register`);
-    
 
     const response = await axios.post(
       `${process.env.REACT_APP_SERVER_HOSTNAME}/driver/register`,
@@ -64,8 +63,11 @@ function Register() {
         {/* Register form */}
         <form
           onSubmit={(e) => registerFormHandler(e)}
-          className='w-10/12 p-8 text-center bg-white shadow md:w-8/12 lg:max-w-xl'
+          className='w-10/12 px-8 py-4 text-center bg-white rounded shadow md:w-8/12 lg:max-w-xl'
         >
+          <div className='pb-4 mb-8 -ml-8 -mr-8 text-lg font-bold border-b border-gray-200'>
+            Δημιουργήστε ένα καινούριο λογαριασμό.
+          </div>
           <div className='flex flex-col md:flex-row md:space-x-2'>
             <div className='relative mb-2 text-gray-700 md:w-1/2'>
               <input
