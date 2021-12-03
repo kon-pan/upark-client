@@ -1,4 +1,3 @@
-import React from 'react';
 import { SidebarProvider } from './SidebarContext';
 import { AuthProvider } from './AuthContext';
 import { combineComponents } from '../../../../util/combineComponents';
