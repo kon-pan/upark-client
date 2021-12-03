@@ -5,13 +5,11 @@ import Home from './pages/user/public/home/Home';
 import About from './pages/user/public/about/About';
 import Login from './pages/user/public/login/Login';
 import Register from './pages/user/public/register/Register';
-import { SidebarProvider } from './pages/user/common/context/SidebarContext';
-import { AuthProvider } from './pages/user/common/context/AuthContext';
+import { AppContextProvider } from "./pages/user/common/context/AppContext";
 
 function App() {
   return (
-    <AuthProvider>
-      <SidebarProvider>
+    <AppContextProvider>
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<Home />} />
@@ -20,8 +18,7 @@ function App() {
             <Route path='/register' element={<Register />} />
           </Routes>
         </BrowserRouter>
-      </SidebarProvider>
-    </AuthProvider>
+    </AppContextProvider>
   );
 }
 
