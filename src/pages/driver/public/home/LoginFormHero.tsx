@@ -1,8 +1,11 @@
+import googleIcon from '../../common/img/google-colored.svg';
 
 function LoginFormHero() {
   return (
-    <form className='w-full max-w-sm px-5 py-6 bg-white rounded shadow-md'>
-      <div className='mb-4 text-lg'>Συνδεθείτε στο λογαριασμό σας.</div>
+    <form className='w-full max-w-md px-5 py-4 bg-white rounded shadow-md'>
+      <div className='px-2 pb-4 mb-4 -ml-5 -mr-5 text-lg text-center border-b border-gray-200'>
+        Συνδεθείτε στο λογαριασμό σας.
+      </div>
       <div className='relative mb-2 text-gray-700'>
         <input
           className='w-full h-10 pl-8 pr-3 text-sm font-semibold placeholder-gray-500 bg-gray-100 border border-gray-100 rounded focus:ring-0 focus:border-gray-200 focus:outline-none focus:bg-white'
@@ -65,6 +68,13 @@ function LoginFormHero() {
           />
         </svg>
       </button>
+
+      <div className='flex items-center justify-center pt-4 mt-4 -ml-5 -mr-5 space-x-4 text-base border-t border-gray-200'>
+        <div className='font-normal'>Συνδεθείτε μέσω: </div>
+        <button className='flex items-center px-3 py-2 space-x-2 text-sm rounded-full shadow bg-gray-50 hover:bg-gray-100 focus:bg-white'>
+          <img src={googleIcon} width='32' height='32' alt='' srcSet='' />
+        </button>
+      </div>
     </form>
   );
 }
