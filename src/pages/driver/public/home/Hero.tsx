@@ -7,12 +7,12 @@ function Hero() {
       {/* Hero Title */}
       <div className='my-8 text-center'>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam alias
-        harum corporis.s
+        harum corporis.
       </div>
       {/* Hero body */}
       <div className='flex items-center justify-center py-4'>
         <div className='flex flex-col items-center w-1/2 max-w-md mr-8 text-lg font-light'>
-          <div className='mb-6 text-justify'>
+          <div className='p-4 mb-6 text-justify'>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error
             beatae aspernatur vero molestiae voluptatibus sunt, rerum
             doloremque. Odit, saepe quae fugiat numquam, exercitationem at
