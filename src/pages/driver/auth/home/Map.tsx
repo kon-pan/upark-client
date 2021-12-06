@@ -9,6 +9,8 @@ import axios from 'axios';
 
 function Map(props: any) {
   const getAddress = props.getAddress;
+  const getPosition = props.getPosition;
+  const searchPosition = props.searchPosition;
 
   const [initialPosition, setInitialPosition] = useState<[number, number]>([
     0, 0,
@@ -29,43 +31,34 @@ function Map(props: any) {
       const cancelToken = axios.CancelToken;
       const source = cancelToken.source();
       (async function () {
-        console.log(initialPosition);
-
         const response = await axios.get(
-          `https://api.tomtom.com/search/2/reverseGeocode/${initialPosition[0]},${initialPosition[1]}.json?key=GtADLOdE9xgB2hQpoFTxRlpliH7CAvAo`,
+          `https://api.tomtom.com/search/2/reverseGeocode/${initialPosition[0]},${initialPosition[1]}.json?key=${process.env.REACT_APP_TOMTOM_KEY}`,
           {
             cancelToken: source.token,
           }
         );
 
-        console.log(response);
-        console.log(response.data.addresses[0].address.freeformAddress);
-
         getAddress(response.data.addresses[0].address.freeformAddress);
+        getPosition(initialPosition);
       })();
 
       return () => {
         source.cancel('axios request cancelled');
       };
     }
-  }, [getAddress, initialPosition]);
+  }, [getAddress, getPosition, initialPosition]);
 
   useEffect(() => {
     if (selectedPosition[0] !== 0 && selectedPosition[1] !== 0) {
       const cancelToken = axios.CancelToken;
       const source = cancelToken.source();
       (async function () {
-        console.log(selectedPosition);
-
         const response = await axios.get(
           `https://api.tomtom.com/search/2/reverseGeocode/${selectedPosition[0]},${selectedPosition[1]}.json?key=GtADLOdE9xgB2hQpoFTxRlpliH7CAvAo`,
           {
             cancelToken: source.token,
           }
         );
-
-        console.log(response);
-        console.log(response.data.addresses[0].address.freeformAddress);
 
         getAddress(response.data.addresses[0].address.freeformAddress);
       })();
@@ -76,6 +69,12 @@ function Map(props: any) {
     }
   }, [getAddress, selectedPosition]);
 
+  useEffect(() => {
+    if (searchPosition[0] !== 0 && searchPosition[1] !== 0) {
+      setSelectedPosition(searchPosition);
+    }
+  }, [searchPosition]);
+
   const Markers = () => {
     useMapEvents({
       click(e) {
@@ -83,21 +82,25 @@ function Map(props: any) {
       },
     });
 
-    return selectedPosition ? (
-      <Marker
-        key={selectedPosition[0]}
-        draggable={true}
-        icon={
-          new Icon({
-            iconUrl: markerIcon,
-            iconSize: [25, 41],
-            iconAnchor: [12, 41],
-          })
-        }
-        position={selectedPosition}
-        interactive={false}
-      />
-    ) : null;
+    if (selectedPosition) {
+      return (
+        <Marker
+          key={selectedPosition[0]}
+          draggable={true}
+          icon={
+            new Icon({
+              iconUrl: markerIcon,
+              iconSize: [25, 41],
+              iconAnchor: [12, 41],
+            })
+          }
+          position={selectedPosition}
+          interactive={false}
+        />
+      );
+    }
+
+    return null;
   };
 
   return (
