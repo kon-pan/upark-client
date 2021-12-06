@@ -6,6 +6,7 @@ import { AuthContext } from '../../common/context/AuthContext';
 import { SidebarContext } from '../../common/context/SidebarContext';
 import Hero from './Hero';
 import Tabs from './Tabs';
+import AuthHome from '../../auth/home/Home';
 
 function Home() {
   const { close } = useContext(SidebarContext);
@@ -14,7 +15,7 @@ function Home() {
   return (
     <div className='lg:flex lg:flex-col'>
       <Navbar />
-      <div className='relative min-h-screen md:flex'>
+      <div className='relative md:min-h-screen md:flex'>
         <Sidebar />
 
         {/* Page main content */}
@@ -35,8 +36,8 @@ function Home() {
               <Hero />
             </>
           ) : (
-            <div className='w-full border-t border-gray-600'>
-              Auth content goes here
+            <div className='flex flex-col flex-1 w-full'>
+              <AuthHome />
             </div>
           )}
         </div>
