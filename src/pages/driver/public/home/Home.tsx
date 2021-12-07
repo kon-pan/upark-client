@@ -36,9 +36,7 @@ function Home() {
               <Hero />
             </>
           ) : (
-            <div className='flex flex-col flex-1 w-full'>
-              <AuthHome />
-            </div>
+            <AuthHome />
           )}
         </div>
       </div>

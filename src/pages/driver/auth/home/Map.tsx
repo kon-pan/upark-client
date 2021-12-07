@@ -38,7 +38,7 @@ function Map(props: any) {
           }
         );
 
-        getAddress(response.data.addresses[0].address.freeformAddress);
+        // getAddress(response.data.addresses[0].address.freeformAddress);
         getPosition(initialPosition);
       })();
 
@@ -54,7 +54,7 @@ function Map(props: any) {
       const source = cancelToken.source();
       (async function () {
         const response = await axios.get(
-          `https://api.tomtom.com/search/2/reverseGeocode/${selectedPosition[0]},${selectedPosition[1]}.json?key=GtADLOdE9xgB2hQpoFTxRlpliH7CAvAo`,
+          `https://api.tomtom.com/search/2/reverseGeocode/${selectedPosition[0]},${selectedPosition[1]}.json?key=${process.env.REACT_APP_TOMTOM_KEY}`,
           {
             cancelToken: source.token,
           }

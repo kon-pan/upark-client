@@ -14,10 +14,41 @@ function Navbar() {
   const user = useContext(AuthContext);
 
   return (
-    <div className='fixed inset-x-0 top-0 z-10 flex items-center justify-between pl-4 space-x-4 bg-gray-800 bg-opacity-100 lg:px-3 text-gray-50'>
-      <NavLink to='/' className='block py-4 text-xl font-bold'>
+    <div className='fixed inset-x-0 top-0 z-50 flex items-center justify-between pl-4 space-x-4 bg-gray-800 bg-opacity-100 lg:pl-0 xl:pl-4 lg:px-12 text-gray-50'>
+      {/* Sidebar button only for lg */}
+      <div className='hidden space-x-2 lg:flex xl:hidden'>
+        <button
+          onClick={toggle}
+          className='p-4 focus:outline-none focus:bg-gray-700'
+        >
+          <svg
+            className='w-6 h-6'
+            xmlns='http://www.w3.org/2000/svg'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
+          >
+            <path
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth='2'
+              d='M4 6h16M4 12h16M4 18h16'
+            />
+          </svg>
+        </button>
+
+        <NavLink
+          to='/'
+          className='py-4 text-xl font-bold'
+        >
+          u<span className='text-yellow-500'>Park</span>
+        </NavLink>
+      </div>
+
+      <NavLink to='/' className='py-4 text-xl font-bold xl:block lg:hidden'>
         u<span className='text-yellow-500'>Park</span>
       </NavLink>
+
       {!user && (
         <div className='justify-between hidden w-full text-sm lg:flex'>
           <nav className='flex'>
@@ -153,7 +184,7 @@ function Navbar() {
         </Menu>
       )}
 
-      {/* Sidebar button */}
+      {/* Sidebar button up until md */}
       <button
         onClick={toggle}
         className='p-4 focus:outline-none focus:bg-gray-700 lg:hidden'

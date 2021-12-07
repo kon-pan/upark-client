@@ -13,8 +13,8 @@ function Sidebar() {
         <div
           className={
             isOpen
-              ? 'absolute z-10 lg:z-0 lg:mt-16 inset-y-0 left-0 w-64 px-2 space-y-6 text-blue-100 transition duration-200 ease-in-out transform -translate-x-0 bg-gray-700 sidebar py-7 lg:relative lg:translate-x-0'
-              : 'absolute z-10 lg:z-0 lg:mt-14 inset-y-0 left-0 w-64 px-2 space-y-6 text-blue-100 transition duration-200 ease-in-out transform -translate-x-full bg-gray-700 sidebar py-7 lg:relative lg:translate-x-0'
+              ? 'absolute z-10 xl:z-0 lg:mt-14 inset-y-0 left-0 w-64 px-2 space-y-6 text-blue-100 transition duration-200 ease-in-out transform -translate-x-0 bg-gray-700 sidebar py-7 xl:relative xl:translate-x-0'
+              : 'absolute z-10 xl:z-0 lg:mt-14 inset-y-0 left-0 w-64 px-2 space-y-6 text-blue-100 transition duration-200 ease-in-out transform -translate-x-full bg-gray-700 sidebar py-7 xl:relative xl:translate-x-0'
           }
         >
           <Link to='/' className='flex items-center px-4 space-x-2 text-white'>
